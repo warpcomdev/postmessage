@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background 0.3s ease;
+            text-align: center;
+            padding: 20px;
+        }
+        .dark {
+            background: #333;
+            color: white;
+        }
+        .light {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body class="light">
+    <h2>Este es un iframe</h2>
+    <p>El color de fondo cambiará según el tema.</p>
+
+    <script>
+        window.addEventListener("message", (event) => {
+            if (event.data?.theme) {
+                document.body.className = event.data.theme;
+            }
+        });
+    </script>
+</body>
+</html>
