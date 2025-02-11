@@ -12,12 +12,16 @@
             padding: 20px;
         }
         .dark {
-            background: #333;
+            background: #002533;
             color: white;
         }
         .light {
-            background: white;
+            background: #fafeff;
             color: black;
+        }
+        .neutral{
+            background: #00374d;
+            color: white;
         }
     </style>
 </head>
@@ -27,6 +31,7 @@
 
     <script>
         window.addEventListener("message", (event) => {
+            console.log({event});
             if (event.data?.theme) {
                 document.body.className = event.data.theme;
             }
